@@ -15,7 +15,6 @@ export class ItemComponent implements OnInit {
   ngOnInit() {}
 
   addtocatHandler (item) {
-    console.log(item)
     this.cartservice.addtocart(item);
   }
 }

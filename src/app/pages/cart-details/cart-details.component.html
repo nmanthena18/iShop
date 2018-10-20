@@ -1,3 +1,45 @@
-<div *ngFor="let p of cartItems">
-  {{p.title}}
+
+<div class="row" *ngIf="cartItems.length <= 0">
+  <div class="col-3"></div>
+  <div class="col-6">
+      <br/>
+      <br/>
+      <br/>
+      <div class="alert alert-dark text-center" role="alert" >
+          <br/>
+          Your cart is empty!
+          <br/>
+          <br/>
+        </div>
+  </div>
+</div>
+<div *ngIf="cartItems.length > 0" >
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let p of cartItems; let i = index">
+   <div class="row">
+      <div class="col-2"></div>
+     <div class="col-1">
+       <img src="{{p.url}}" width="100" alt="" />
+     </div>
+     <div class="col-3"> {{p.title}}</div>
+     <div class="col-2 text-center">
+            <button type="button" class="btn btn-success" (click)="addOne(p.id)">+</button> &nbsp; 
+            <button type="button" class="btn btn-warning" (click)="removeOne(p.id, i)">-</button> &nbsp; 
+            <button type="button" class="btn btn-danger" (click)="removeItem(i)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-2"><b>Quantity:</b> {{p.qty}}</div>
+     <div class="col-2"><b>Price:</b> {{p.price}}</div>
+   </div>
+  </li>
+</ul><br/>
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-2">Number of Products: {{details.totalItems + 1}}</div>
+    <div class="col-2">Total: {{details.totalPrice}}</div> <br/>  <br/>
+  <div class="col-8"></div>
+  <div class="col-4">
+    <button type="button" class="btn btn-warning" (click)="removeAll()">Clear Cart</button> &nbsp; 
+    <button type="button" class="btn btn-success" routerLink="/order">Proceed to checkout</button> &nbsp; 
+  </div>
+</div>
 </div>

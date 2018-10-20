@@ -12,15 +12,17 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ItemComponent } from './components/item/item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartDetailsComponent } from './pages/cart-details/cart-details.component';
+import { OrderComponent } from './pages/order/order.component';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent},
   { path: '',  redirectTo: 'welcome', pathMatch: 'full', },
   { path: 'cart',  component: CartDetailsComponent },
+  { path: 'order',  component: OrderComponent },
   ];
 
 
-  const component = [ProductsComponent, ItemComponent];
+  const component = [ProductsComponent, ItemComponent, OrderComponent];
 
 @NgModule({
   declarations: [
