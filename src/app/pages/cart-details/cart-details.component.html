@@ -25,7 +25,7 @@
      <div class="col-2 text-center">
             <button type="button" class="btn btn-success" (click)="addOne(p.id)">+</button> &nbsp; 
             <button type="button" class="btn btn-warning" (click)="removeOne(p.id, i)">-</button> &nbsp; 
-            <button type="button" class="btn btn-danger" (click)="removeItem(i)"><i class="fa fa-trash" aria-hidden="true"></i> X</button>
+            <button type="button" class="btn btn-danger" (click)="removeItem(i)"><i class="fa fa-trash" aria-hidden="true"></i> </button>
      </div>
      <div class="col-2"><b>Quantity:</b> {{p.qty}}</div>
      <div class="col-2"><b>Price:</b> {{p.price}}</div>
@@ -35,7 +35,7 @@
 <div class="row">
     <div class="col-8"></div>
     <div class="col-2">Number of Products: {{details.totalItems + 1}}</div>
-    <div class="col-2">Total: {{details.totalPrice}}</div> <br/>  <br/>
+    <div class="col-2">Total Price: {{details.totalPrice}}</div> <br/>  <br/>
   <div class="col-8"></div>
   <div class="col-4">
     <button type="button" class="btn btn-warning" (click)="removeAll()">Clear Cart</button> &nbsp; 
