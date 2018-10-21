@@ -16,9 +16,10 @@ import { OrderComponent } from './pages/order/order.component';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent},
-  { path: '',  redirectTo: 'welcome', pathMatch: 'full', },
+  { path: '',  redirectTo: '/', pathMatch: 'full', },
   { path: 'cart',  component: CartDetailsComponent },
   { path: 'order',  component: OrderComponent },
+  { path: '**', component: ProductsComponent},
   ];
 
 
