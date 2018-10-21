@@ -13,7 +13,7 @@ const path = require('path');
 
 app.use(express.static('./dist/iShop'));
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname,'index.html'));
+  res.sendFile(path.join('./dist/iShop/index.html'));
 });
 
 app.listen(process.env.PORT || 4000, function(){
